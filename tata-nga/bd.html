@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Reine du Mousseau</title>
+<meta name="description" content="La grande BD animée de Tata Nga, la Reine des Ongles du Mousseau. Joyeux anniversaire !">
+<meta property="og:title" content="✨ La grande BD animée de Tata Nga, Reine des Ongles">
+<meta property="og:description" content="Une BD animée façon aquarelle pour l'anniversaire de Tata Nga. Chúc mừng sinh nhật !">
+<meta property="og:image" content="https://henrilescure74330.github.io/BD-TANSERI-LESCURE/tata-nga/nga-gateau.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Dancing+Script:wght@700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--encre:#2b2033;--rose:#e2557a;--or:#d4a032;--papier:#fbf6ec}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:#efe6d6;color:var(--encre);font:16px/1.5 Nunito,system-ui,sans-serif;overflow-x:hidden;
+  background-image:radial-gradient(rgba(0,0,0,.035) 1px,transparent 1px);background-size:6px 6px}
+main{max-width:720px;margin:0 auto;padding:0 16px 120px}
+header{text-align:center;padding:40px 0 10px}
+.tome{font:800 13px Nunito;letter-spacing:.2em;text-transform:uppercase;color:var(--or)}
+h1{font-family:Bangers,cursive;font-size:clamp(40px,12vw,76px);line-height:.95;margin:8px 0;color:var(--rose);
+  -webkit-text-stroke:2px var(--encre);text-shadow:4px 4px 0 var(--encre);letter-spacing:.03em}
+.auteurs{font-size:14px;opacity:.75}
+.planche{margin:30px 0;opacity:0;transform:translateY(40px) scale(.97);transition:all .9s cubic-bezier(.2,.8,.2,1)}
+.planche.vu{opacity:1;transform:none}
+.case{position:relative;border:4px solid var(--encre);border-radius:6px;background:#fff;overflow:hidden;box-shadow:6px 6px 0 var(--encre)}
+.case svg{display:block;width:100%;height:auto}
+.recit{background:#fff4c8;border:3px solid var(--encre);padding:8px 12px;font-weight:700;font-size:15px;margin:0 0 10px;box-shadow:3px 3px 0 var(--encre);display:inline-block}
+.recit b{font-family:Bangers;font-weight:400;letter-spacing:.05em;color:var(--rose);font-size:18px;margin-right:6px}
+.bulle{position:absolute;background:#fff;border:2.5px solid var(--encre);border-radius:18px;padding:6px 10px;
+  font-weight:800;font-size:clamp(11px,3.1vw,15px);line-height:1.25;max-width:46%;opacity:0;transform:scale(.4);transition:all .5s cubic-bezier(.3,1.6,.5,1) .5s}
+.vu .bulle{opacity:1;transform:none}
+.vu .bulle.b2{transition-delay:1.4s}
+.bulle::after{content:"";position:absolute;width:14px;height:14px;background:#fff;border:2.5px solid var(--encre);border-top:0;border-left:0;transform:rotate(45deg)}
+.bulle.bas::after{bottom:-9px;left:24px}
+.bulle.bas-d::after{bottom:-9px;right:24px}
+.bulle.pense{border-style:dashed;font-style:italic;font-weight:700}
+.bulle.pense::after{display:none}
+/* animations SVG */
+.nuage{animation:derive 26s linear infinite}
+.nuage.l{animation-duration:40s;animation-direction:reverse}
+@keyframes derive{from{transform:translateX(-120px)}to{transform:translateX(460px)}}
+.etincelle{transform-box:fill-box;transform-origin:center;animation:scint 1.4s ease-in-out infinite}
+@keyframes scint{0%,100%{transform:scale(.2) rotate(0);opacity:.2}50%{transform:scale(1) rotate(45deg);opacity:1}}
+.yeux{transform-box:fill-box;transform-origin:center;animation:cligne 4.5s infinite}
+@keyframes cligne{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.bras-v{transform-box:view-box;transform-origin:136px 168px;animation:salut 2.2s ease-in-out infinite}
+@keyframes salut{50%{transform:rotate(-9deg)}}
+.flacon{transform-box:fill-box;transform-origin:bottom;animation:saute 1.2s ease-in-out infinite}
+@keyframes saute{0%,100%{transform:translateY(0) scaleY(1)}40%{transform:translateY(-14px) scaleY(1.05)}60%{transform:translateY(0) scaleY(.92)}}
+.tourne{transform-box:fill-box;transform-origin:center;animation:tour 3s linear infinite}
+.tourne.vite{animation-duration:1s}
+@keyframes tour{to{transform:rotate(360deg)}}
+.oiseau{animation:vole 9s linear infinite}
+@keyframes vole{from{transform:translate(-40px,0)}50%{transform:translate(200px,-20px)}to{transform:translate(440px,10px)}}
+.avion{animation:avion 11s linear infinite}
+@keyframes avion{from{transform:translateX(480px)}to{transform:translateX(-620px)}}
+.lanterne{animation:monte 9s ease-in infinite}
+@keyframes monte{from{transform:translateY(60px);opacity:0}15%{opacity:1}to{transform:translateY(-330px);opacity:0}}
+.feu{transform-box:fill-box;transform-origin:center;animation:boum 2.4s ease-out infinite}
+@keyframes boum{0%{transform:scale(0);opacity:1}70%{opacity:1}100%{transform:scale(1.3);opacity:0}}
+.flamme{transform-box:fill-box;transform-origin:bottom;animation:flamme .35s ease-in-out infinite alternate}
+@keyframes flamme{to{transform:scaleY(1.25) skewX(5deg)}}
+.salue{transform-box:fill-box;transform-origin:bottom left;animation:garde 1.4s ease-in-out infinite}
+@keyframes garde{50%{transform:rotate(-25deg)}}
+.goutte{animation:goutte 1.6s ease-in infinite}
+@keyframes goutte{from{transform:translateY(0);opacity:1}to{transform:translateY(18px);opacity:0}}
+.pop{transform-box:fill-box;transform-origin:center;animation:pop 1.6s ease-in-out infinite}
+@keyframes pop{0%,100%{transform:scale(1) rotate(-4deg)}50%{transform:scale(1.15) rotate(3deg)}}
+.coeur{animation:coeur 3s ease-in infinite}
+@keyframes coeur{from{transform:translateY(0);opacity:1}to{transform:translateY(-90px);opacity:0}}
+.ongle-arc{animation:arc 2s linear infinite}
+@keyframes arc{0%{fill:#e53950}25%{fill:#ffb703}50%{fill:#3fb68b}75%{fill:#7b6cf6}100%{fill:#e53950}}
+.fin{text-align:center;background:var(--papier);border:4px solid var(--encre);box-shadow:6px 6px 0 var(--encre);padding:22px 18px;margin-top:30px}
+.fin .viet{font-family:"Dancing Script",cursive;font-size:clamp(34px,9vw,48px);color:#c4302b;line-height:1.1}
+.btn{font:800 16px Nunito,sans-serif;border:3px solid var(--encre);border-radius:999px;padding:12px 22px;cursor:pointer;background:#ffd54f;color:var(--encre);box-shadow:4px 4px 0 var(--encre);margin:6px}
+.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--encre)}
+.musique{position:fixed;z-index:10;bottom:16px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;
+  background:var(--encre);color:#fff;border:0;border-radius:999px;padding:12px 22px 12px 14px;font:800 16px Nunito,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.3);cursor:pointer;white-space:nowrap}
+.musique .ic{width:34px;height:34px;border-radius:50%;background:var(--rose);display:grid;place-items:center;font-size:16px}
+.confetti{position:fixed;top:-20px;width:9px;height:14px;z-index:20;pointer-events:none;animation:conf 2.6s ease-in forwards}
+@keyframes conf{to{transform:translate(var(--dx),105vh) rotate(900deg)}}
+a{color:#2f6b4f;font-weight:800}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+
+<!-- Personnages et décors réutilisables -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="aqua" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="4"/>
+      <feDisplacementMap in="SourceGraphic" scale="9"/>
+    </filter>
+    <filter id="papier"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 .5  0 0 0 0 .4  0 0 0 0 .3  0 0 0 .07 0"/></filter>
+    <radialGradient id="joue"><stop offset="0" stop-color="#f38ea0" stop-opacity=".7"/><stop offset="1" stop-color="#f38ea0" stop-opacity="0"/></radialGradient>
+    <linearGradient id="ciel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8ec5ea"/><stop offset=".7" stop-color="#d9eef7"/><stop offset="1" stop-color="#fbeedd"/></linearGradient>
+    <linearGradient id="nuit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c1846"/><stop offset="1" stop-color="#5a3a78"/></linearGradient>
+    <linearGradient id="aube" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd6a5"/><stop offset=".6" stop-color="#ffeedd"/><stop offset="1" stop-color="#e8f3e6"/></linearGradient>
+
+    <g id="nuage"><ellipse cx="0" cy="0" rx="34" ry="14" fill="#fff"/><ellipse cx="-16" cy="-8" rx="18" ry="14" fill="#fff"/><ellipse cx="12" cy="-12" rx="20" ry="16" fill="#fff"/></g>
+    <path id="etoile4" d="M0 -10 L2.5 -2.5 L10 0 L2.5 2.5 L0 10 L-2.5 2.5 L-10 0 L-2.5 -2.5Z" fill="#ffe27a"/>
+
+    <!-- Tata Nga (cadre 200x320) -->
+    <g id="nga">
+      <path d="M50 96 Q44 36 100 34 Q156 36 150 96 L153 146 Q134 156 120 142 L80 142 Q66 156 47 146 Z" fill="#3b2418"/>
+      <rect x="88" y="128" width="24" height="28" fill="#ebbe9b"/>
+      <path d="M56 320 Q52 180 80 158 Q100 150 120 158 Q148 180 144 320 Z" fill="#f4a9bf"/>
+      <path d="M70 200 Q100 214 130 200" stroke="#e98aa6" stroke-width="3" fill="none"/>
+      <path d="M80 157 L100 182 L120 157 Q100 166 80 157Z" fill="#fff"/>
+      <g fill="#fff" stroke="#d9c8a0" stroke-width=".8"><circle cx="84" cy="161" r="2.6"/><circle cx="90" cy="168" r="2.6"/><circle cx="95" cy="175" r="2.6"/><circle cx="116" cy="161" r="2.6"/><circle cx="110" cy="168" r="2.6"/><circle cx="105" cy="175" r="2.6"/></g>
+      <!-- bras gauche + main -->
+      <path d="M66 172 Q42 222 54 268" stroke="#f4a9bf" stroke-width="22" stroke-linecap="round" fill="none"/>
+      <circle cx="55" cy="276" r="11" fill="#f5d2b3"/>
+      <g fill="#e53950"><ellipse cx="48" cy="285" rx="2.6" ry="3.6"/><ellipse cx="54" cy="287" rx="2.6" ry="3.6"/><ellipse cx="60" cy="286" rx="2.6" ry="3.6"/></g>
+      <!-- bras droit levé, signe V -->
+      <g class="bras-v">
+        <path d="M134 172 Q168 146 162 102" stroke="#f4a9bf" stroke-width="22" stroke-linecap="round" fill="none"/>
+        <circle cx="161" cy="92" r="12" fill="#f5d2b3"/>
+        <rect x="150" y="58" width="8" height="30" rx="4" fill="#f5d2b3" transform="rotate(-12 154 88)"/>
+        <rect x="162" y="58" width="8" height="30" rx="4" fill="#f5d2b3" transform="rotate(12 166 88)"/>
+        <g fill="#e53950"><rect x="150.5" y="58" width="7" height="9" rx="3.5" transform="rotate(-12 154 88)"/><rect x="162.5" y="58" width="7" height="9" rx="3.5" transform="rotate(12 166 88)"/></g>
+        <use href="#etoile4" class="etincelle" transform="translate(176 54) scale(.8)"/>
+        <use href="#etoile4" class="etincelle" style="animation-delay:.6s" transform="translate(142 60) scale(.6)"/>
+      </g>
+      <ellipse cx="100" cy="94" rx="41" ry="47" fill="#f5d2b3"/>
+      <path d="M56 92 Q56 44 100 42 Q144 44 144 92 Q128 64 104 58 Q92 76 58 94 Z" fill="#3b2418"/>
+      <path d="M74 84 Q83 79 92 83 M108 83 Q117 79 126 84" stroke="#3b2418" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <g class="yeux"><ellipse cx="84" cy="98" rx="5" ry="6.5" fill="#2a1a12"/><ellipse cx="116" cy="98" rx="5" ry="6.5" fill="#2a1a12"/>
+        <circle cx="86" cy="95.5" r="1.8" fill="#fff"/><circle cx="118" cy="95.5" r="1.8" fill="#fff"/></g>
+      <ellipse cx="74" cy="114" rx="10" ry="6" fill="url(#joue)"/><ellipse cx="126" cy="114" rx="10" ry="6" fill="url(#joue)"/>
+      <path d="M98 104 Q100 110 102 108" stroke="#d29b7a" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M86 119 Q100 133 114 119 Q100 125 86 119Z" fill="#c94a5a"/><path d="M89 120.5 Q100 124 111 120.5 L110 122 Q100 125 90 122Z" fill="#fff"/>
+      <g fill="#d4a032"><circle cx="58" cy="106" r="2.8"/><rect x="57.2" y="108" width="1.6" height="14"/><circle cx="58" cy="124" r="2.5"/>
+        <circle cx="142" cy="106" r="2.8"/><rect x="141.2" y="108" width="1.6" height="14"/><circle cx="142" cy="124" r="2.5"/></g>
+    </g>
+
+    <!-- immeubles d'Évry -->
+    <g id="ville" filter="url(#aqua)">
+      <rect x="0" y="190" width="70" height="110" fill="#e9c9a8"/><rect x="62" y="160" width="60" height="140" fill="#d8b6c4"/>
+      <rect x="118" y="200" width="80" height="100" fill="#f1dcb8"/><rect x="190" y="172" width="54" height="128" fill="#c9d7e6"/>
+      <rect x="240" y="196" width="90" height="104" fill="#e8c4b0"/><rect x="322" y="166" width="78" height="134" fill="#d5ccdf"/>
+      <g fill="#fff6c8" opacity=".9">
+        <rect x="12" y="205" width="10" height="12"/><rect x="34" y="205" width="10" height="12"/><rect x="12" y="232" width="10" height="12"/>
+        <rect x="74" y="176" width="10" height="12"/><rect x="96" y="176" width="10" height="12"/><rect x="74" y="202" width="10" height="12"/><rect x="96" y="228" width="10" height="12"/>
+        <rect x="132" y="214" width="12" height="12"/><rect x="160" y="214" width="12" height="12"/><rect x="204" y="186" width="10" height="12"/><rect x="222" y="212" width="10" height="12"/>
+        <rect x="256" y="210" width="12" height="12"/><rect x="290" y="210" width="12" height="12"/><rect x="336" y="182" width="10" height="12"/><rect x="362" y="182" width="10" height="12"/><rect x="362" y="210" width="10" height="12"/>
+      </g>
+      <ellipse cx="40" cy="296" rx="40" ry="22" fill="#8bbf7a"/><ellipse cx="200" cy="300" rx="70" ry="20" fill="#9ccb85"/><ellipse cx="360" cy="298" rx="50" ry="22" fill="#86b873"/>
+    </g>
+  </defs>
+</svg>
+
+<main>
+  <header>
+    <div class="tome">Grande BD animée · Tome 1</div>
+    <h1>La Reine<br>du Mousseau</h1>
+    <div class="auteurs">Les aventures de Tata Nga, la manucure la plus stylée de l'Essonne</div>
+  </header>
+
+  <!-- 1. Couverture -->
+  <section class="planche">
+    <p class="recit"><b>Évry.</b> Quartier du Mousseau. Un matin comme les autres… ou presque.</p>
+    <div class="case">
+      <svg viewBox="0 0 400 300" role="img" aria-label="Tata Nga devant les immeubles d'Évry, la main levée en signe V">
+        <rect width="400" height="300" fill="url(#ciel)"/>
+        <circle cx="70" cy="62" r="30" fill="#ffe08a" filter="url(#aqua)"/>
+        <use href="#nuage" class="nuage" transform="translate(0 50)"/><use href="#nuage" class="nuage l" transform="translate(120 90) scale(.7)"/>
+        <use href="#ville"/>
+        <rect x="150" y="248" width="100" height="22" rx="4" fill="#2f6b4f"/><text x="200" y="263" font-family="Nunito" font-weight="800" font-size="11" fill="#fff" text-anchor="middle">LE MOUSSEAU</text>
+        <use href="#nga" transform="translate(236 60) scale(.78)"/>
+        <use href="#etoile4" class="etincelle" transform="translate(220 80)"/><use href="#etoile4" class="etincelle" style="animation-delay:.4s" transform="translate(380 120)"/>
+        <use href="#etoile4" class="etincelle" style="animation-delay:.9s" transform="translate(300 40) scale(.7)"/>
+        <rect width="400" height="300" filter="url(#papier)"/>
+      </svg>
+      <div class="bulle bas" style="left:4%;top:8%">Bonjour le Mousseau ! Aujourd'hui… on brille ✨</div>
+    </div>
+  </section>
+
+  <!-- 2. Le réveil -->
+  <section class="planche">
+    <p class="recit"><b>7 h 02.</b> Les oiseaux se posent sur le balcon. Pas pour chanter : pour se faire limer les griffes.</p>
+    <div class="case">
+      <svg viewBox="0 0 400 300" role="img" aria-label="Tata Nga à sa fenêtre au lever du soleil, des oiseaux font la queue">
+        <rect width="400" height="300" fill="url(#aube)"/>
+        <circle cx="330" cy="70" r="40" fill="#ffc46b" opacity=".8" filter="url(#aqua)"/>
+        <g class="oiseau"><path d="M0 60 q8 -8 16 0 q8 -8 16 0" stroke="#3a2a3a" stroke-width="3" fill="none"/></g>
+        <g class="oiseau" style="animation-delay:-3s"><path d="M0 90 q6 -6 12 0 q6 -6 12 0" stroke="#3a2a3a" stroke-width="2.5" fill="none"/></g>
+        <rect x="90" y="40" width="230" height="270" fill="#f3d9c4" filter="url(#aqua)"/>
+        <rect x="140" y="80" width="130" height="150" fill="#9fc6e0"/>
+        <use href="#nga" transform="translate(130 92) scale(.68)"/>
+        <rect x="134" y="74" width="142" height="10" fill="#8a5a44"/><rect x="134" y="74" width="10" height="160" fill="#8a5a44"/><rect x="266" y="74" width="10" height="160" fill="#8a5a44"/>
+        <rect x="124" y="226" width="162" height="16" fill="#8a5a44"/>
+        <rect x="140" y="242" width="130" height="40" fill="#c46a5a"/>
+        <g><circle cx="160" cy="226" r="9" fill="#e2557a"/><circle cx="182" cy="222" r="9" fill="#ffb3c6"/><circle cx="228" cy="224" r="9" fill="#e2557a"/><circle cx="250" cy="222" r="9" fill="#ffd166"/></g>
+        <!-- file d'attente d'oiseaux sur le rebord -->
+        <g fill="#7a8fb3"><ellipse cx="300" cy="230" rx="10" ry="8"/><ellipse cx="322" cy="230" rx="10" ry="8"/><ellipse cx="344" cy="230" rx="10" ry="8"/></g>
+        <g fill="#fff"><circle cx="304" cy="227" r="2.5"/><circle cx="326" cy="227" r="2.5"/><circle cx="348" cy="227" r="2.5"/></g>
+        <g fill="#f4a261"><path d="M309 230 l6 2 l-6 2z"/><path d="M331 230 l6 2 l-6 2z"/><path d="M353 230 l6 2 l-6 2z"/></g>
+        <rect x="286" y="238" width="80" height="6" fill="#8a5a44"/>
+        <text x="330" y="262" font-family="Bangers" font-size="13" fill="#3a2a3a" text-anchor="middle">N° 1, 2, 3…</text>
+        <rect width="400" height="300" filter="url(#papier)"/>
+      </svg>
+      <div class="bulle bas-d" style="right:3%;top:5%">Un par un, mes chéris. Même les pigeons ont droit à des griffes nickel.</div>
+    </div>
+  </section>
+
+  <!-- 3. Le salon -->
+  <section class="planche">
+    <p class="recit"><b>9 h 00.</b> Le salon de la Reine ouvre ses portes. Une urgence arrive déjà.</p>
+    <div class="case">
+      <svg viewBox="0 0 400 300" role="img" aria-label="Au salon, une voisine montre son ongle cassé, les flacons de vernis sautent">
+        <rect width="400" height="300" fill="#fde3ea"/>
+        <g filter="url(#aqua)"><rect x="0" y="0" width="400" height="190" fill="#fbd0dc"/><circle cx="60" cy="40" r="24" fill="#fff" opacity=".5"/><circle cx="340" cy="50" r="30" fill="#fff" opacity=".4"/></g>
+        <text x="200" y="40" font-family="Dancing Script" font-weight="700" font-size="26" fill="#c43d63" text-anchor="middle">Salon de la Reine 👑</text>
+        <!-- étagère de flacons -->
+        <rect x="120" y="96" width="160" height="6" fill="#a86c52"/>
+        <g><g class="flacon"><rect x="130" y="70" width="16" height="26" rx="4" fill="#e53950"/><rect x="134" y="60" width="8" height="12" fill="#333"/></g>
+        <g class="flacon" style="animation-delay:.15s"><rect x="156" y="70" width="16" height="26" rx="4" fill="#ffb703"/><rect x="160" y="60" width="8" height="12" fill="#333"/></g>
+        <g class="flacon" style="animation-delay:.3s"><rect x="182" y="70" width="16" height="26" rx="4" fill="#3fb68b"/><rect x="186" y="60" width="8" height="12" fill="#333"/></g>
+        <g class="flacon" style="animation-delay:.45s"><rect x="208" y="70" width="16" height="26" rx="4" fill="#7b6cf6"/><rect x="212" y="60" width="8" height="12" fill="#333"/></g>
+        <g class="flacon" style="animation-delay:.6s"><rect x="234" y="70" width="16" height="26" rx="4" fill="#f4a9bf"/><rect x="238" y="60" width="8" height="12" fill="#333"/></g>
+        <g class="flacon" style="animation-delay:.75s"><rect x="260" y="70" width="16" height="26" rx="4" fill="#d4a032"/><rect x="264" y="60" width="8" height="12" fill="#333"/></g></g>
+        <!-- la voisine paniquée -->
+        <g transform="translate(20 110)">
+          <path d="M10 200 Q8 110 50 100 Q92 110 90 200Z" fill="#7fb4d8"/>
+          <circle cx="50" cy="66" r="34" fill="#f2c9a8"/>
+          <path d="M16 62 Q18 26 50 26 Q84 26 84 62 Q70 40 50 44 Q30 40 16 62Z" fill="#b5651d"/>
+          <path d="M36 62 q5 -4 10 0 M56 62 q5 -4 10 0" stroke="#2a1a12" stroke-width="2.5" fill="none"/>
+          <ellipse cx="50" cy="84" rx="7" ry="9" fill="#7a2a33"/>
+          <path d="M30 50 q8 -6 14 -2 M70 50 q-8 -6 -14 -2" stroke="#7a4a20" stroke-width="2" fill="none"/>
+          <path d="M84 120 Q110 90 112 70" stroke="#7fb4d8" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <circle cx="112" cy="62" r="10" fill="#f2c9a8"/><rect x="108" y="40" width="7" height="18" rx="3" fill="#f2c9a8"/>
+          <path d="M108 40 l3 4 l2 -5 l2 4" stroke="#7a2a33" stroke-width="1.5" fill="none"/>
+          <path class="goutte" d="M86 44 q4 8 0 10 q-4 -2 0 -10" fill="#7ec8f0"/>
+        </g>
+        <!-- comptoir + Tata Nga -->
+        <use href="#nga" transform="translate(232 96) scale(.66)"/>
+        <rect x="200" y="236" width="200" height="70" fill="#fff" stroke="#e2557a" stroke-width="3"/>
+        <text x="300" y="268" font-family="Bangers" font-size="16" fill="#e2557a" text-anchor="middle" letter-spacing="1">NICKEL · PROPRE · STYLÉ</text>
+        <rect width="400" height="300" filter="url(#papier)"/>
+      </svg>
+      <div class="bulle bas" style="left:3%;top:4%">Au secours Tata Nga ! Mon ongle s'est cassé !!</div>
+      <div class="bulle b2 bas-d" style="right:3%;top:22%">Pas de panique. La Reine est là.</div>
+    </div>
+  </section>
+
+  <!-- 4. La magie -->
+  <section class="planche">
+    <p class="recit"><b>9 h 01.</b> Lime ! Pinceau ! Paillettes ! Technique secrète du Mousseau…</p>
+    <div class="case">
+      <svg viewBox="0 0 400 300" role="img" aria-label="Tata Nga lance sa technique secrète, la lime tourne, les ongles changent de couleur">
+        <rect width="400" height="300" fill="url(#nuit)"/>
+        <g fill="#fff" opacity=".7"><circle cx="30" cy="30" r="1.5"/><circle cx="90" cy="70" r="1"/><circle cx="350" cy="40" r="1.5"/><circle cx="300" cy="100" r="1"/><circle cx="60" cy="200" r="1.2"/><circle cx="370" cy="240" r="1.4"/></g>
+        <g class="tourne" style="transform-origin:200px 160px"><circle cx="200" cy="160" r="120" fill="none" stroke="#ffe27a" stroke-width="2" stroke-dasharray="4 14" opacity=".8"/>
+          <use href="#etoile4" transform="translate(200 40)"/><use href="#etoile4" transform="translate(320 160)"/><use href="#etoile4" transform="translate(200 280)"/><use href="#etoile4" transform="translate(80 160)"/></g>
+        <use href="#nga" transform="translate(110 40) scale(.82)"/>
+        <!-- la lime magique -->
+        <g transform="translate(300 70)"><g class="tourne vite"><rect x="-6" y="-34" width="12" height="68" rx="6" fill="#d9b48f"/><rect x="-6" y="-34" width="12" height="30" rx="6" fill="#f4a9bf"/></g></g>
+        <!-- ongles arc-en-ciel -->
+        <g transform="translate(40 210)"><g class="ongle-arc"><ellipse cx="0" cy="0" rx="9" ry="13"/><ellipse cx="24" cy="-6" rx="9" ry="13" style="animation-delay:.3s"/><ellipse cx="48" cy="-2" rx="9" ry="13"/></g></g>
+        <text x="200" y="40" class="pop" font-family="Bangers" font-size="34" fill="#ffd54f" stroke="#2b2033" stroke-width="1.5" text-anchor="middle">TCHIK TCHIK… BLING !</text>
+        <rect width="400" height="300" filter="url(#papier)"/>
+      </svg>
+      <div class="bulle bas-d" style="right:3%;bottom:6%">Trois minutes chrono. Gel, déco, paillettes. Suivante !</div>
+    </div>
+  </section>
+
+  <!-- 5. Restaurant -->
+  <section class="planche">
+    <p class="recit"><b>12 h 30.</b> Déjeuner au restaurant. Officiellement, pour manger. En vrai… mission d'inspection.</p>
+    <div class="case">
+      <svg viewBox="0 0 400 300" role="img" aria-label="Au restaurant, l'œuf au plat fait le salut militaire, le serveur cache ses mains">
+        <rect width="400" height="300" fill="#fbf1e2"/>
+        <g filter="url(#aqua)"><rect x="0" y="0" width="400" height="26" fill="#9a6a44"/>
+          <path d="M0 26 q20 40 40 0 q20 50 40 0 q20 34 40 0 q20 46 40 0 q20 40 40 0 q20 50 40 0 q20 34 40 0 q20 44 40 0 q20 38 40 0 q20 46 40 0" fill="#7fbf6a"/>
+          <rect x="300" y="40" width="100" height="160" fill="#cfe6f2" opacity=".8"/></g>
+        <use href="#nga" transform="translate(120 50) scale(.72)"/>
+        <!-- serveur -->
+        <g transform="translate(300 70)">
+          <path d="M10 230 Q6 110 46 100 Q86 110 82 230Z" fill="#2b2b2b"/><path d="M36 102 L46 130 L56 102Z" fill="#fff"/>
+          <circle cx="46" cy="70" r="30" fill="#f0c8a4"/><path d="M16 64 Q20 34 46 36 Q74 34 76 64 Q60 48 46 52 Q30 48 16 64Z" fill="#222"/>
+          <circle cx="36" cy="72" r="3" fill="#222"/><circle cx="56" cy="72" r="3" fill="#222"/><path d="M38 88 q8 -4 16 0" stroke="#222" stroke-width="2.5" fill="none"/>
+          <path class="goutte" d="M74 52 q4 8 0 10 q-4 -2 0 -10" fill="#7ec8f0"/>
+        </g>
+        <!-- table -->
+        <rect x="0" y="236" width="400" height="70" fill="#fff" stroke="#e9d9c8" stroke-width="3"/>
+        <ellipse cx="160" cy="246" rx="70" ry="16" fill="#2b2b2b"/>
+        <!-- l'œuf au garde-à-vous -->
+        <g transform="translate(160 226)">
+          <path d="M-40 18 Q-46 -6 -20 -10 Q-10 -26 10 -16 Q40 -18 38 6 Q46 22 20 22 Q-10 30 -40 18Z" fill="#fff"/>
+          <circle cx="0" cy="2" r="14" fill="#ffc21a"/>
+          <circle cx="-5" cy="0" r="2" fill="#2b2033"/><circle cx="5" cy="0" r="2" fill="#2b2033"/><path d="M-4 7 q4 3 8 0" stroke="#2b2033" stroke-width="1.5" fill="none"/>
+          <g class="salue"><path d="M12 -6 l14 -14" stroke="#fff" stroke-width="5" stroke-linecap="round"/></g>
+        </g>
+        <text x="80" y="200" font-family="Bangers" font-size="18" fill="#e2557a" transform="rotate(-8 80 200)">GARDE-À-VOUS !</text>
+        <rect width="400" height="300" filter="url(#papier)"/>
+      </svg>
+      <div class="bulle bas" style="left:3%;top:12%">Majesté ! Jaune centré, zéro bavure !</div>
+      <div class="bulle pense b2" style="right:3%;top:8%">(Surtout… cacher… mes mains…)</div>
+    </div>
+  </section>
+
+  <!-- 6. Le ciel d'Évry -->
+  <section class="planche">
+    <p class="recit"><b>15 h 00.</b> Même les avions qui passent au-dessus d'Évry font un petit coucou. Par respect.</p>
+    <div class="case">
+      <svg viewBox="0 0 400 300" role="img" aria-label="Un avion traverse le ciel d'Évry avec une banderole joyeux anniversaire Tata Nga">
+        <rect width="400" height="300" fill="url(#ciel)"/>
+        <use href="#nuage" class="nuage l" transform="translate(40 40) scale(1.2)"/><use href="#nuage" class="nuage" transform="translate(200 120) scale(.8)"/>
+        <g class="avion">
+          <g transform="translate(40 70)">
+            <path d="M0 10 Q10 0 50 2 L70 -12 L76 -12 L66 4 Q80 6 80 12 Q80 18 50 18 L10 18 Q0 16 0 10Z" fill="#fff" stroke="#2b2033" stroke-width="2"/>
+            <circle cx="20" cy="9" r="3" fill="#8ec5ea"/><circle cx="30" cy="9" r="3" fill="#8ec5ea"/><circle cx="40" cy="9" r="3" fill="#8ec5ea"/>
+            <line x1="80" y1="12" x2="104" y2="12" stroke="#2b2033" stroke-width="1.5"/>
+            <path d="M104 0 L400 0 Q410 12 400 24 L104 24Z" fill="#e2557a" stroke="#2b2033" stroke-width="2"/>
+            <text x="252" y="17" font-family="Bangers" font-size="15" fill="#fff" text-anchor="middle" letter-spacing="1">JOYEUX ANNIV TATA NGA ! 💅</text>
+          </g>
+        </g>
+        <use href="#ville"/>
+        <use href="#nga" transform="translate(164 168) scale(.42)"/>
+        <rect width="400" height="300" filter="url(#papier)"/>
+      </svg>
+      <div class="bulle bas" style="left:3%;bottom:30%">Merci, merci ! Ongles à l'heure, avion à l'heure !</div>
+    </div>
+  </section>
+
+  <!-- 7. Le gâteau -->
+  <section class="planche">
+    <p class="recit"><b>19 h 00.</b> Le gâteau d'anniversaire arrive. Avec un invité très… piquant.</p>
+    <div class="case">
+      <svg viewBox="0 0 400 300" role="img" aria-label="Un durian sur le gâteau demande une manucure, les bougies rayées brillent">
+        <rect width="400" height="300" fill="#fff1f4"/>
+        <g filter="url(#aqua)"><circle cx="60" cy="70" r="40" fill="#ffd1dc"/><circle cx="350" cy="90" r="46" fill="#ffe7a8"/><circle cx="330" cy="230" r="34" fill="#ffd1dc"/></g>
+        <use href="#nga" transform="translate(258 92) scale(.66)"/>
+        <!-- gâteau -->
+        <g transform="translate(40 150)">
+          <rect x="0" y="40" width="200" height="100" rx="10" fill="#fff8ee" stroke="#8a5a34" stroke-width="3"/>
+          <path d="M0 50 Q0 36 14 38 L186 38 Q200 36 200 50 L200 64 q-10 14 -18 0 q-12 22 -24 0 q-12 16 -22 0 q-12 20 -26 0 q-12 14 -22 0 q-12 22 -26 0 q-12 16 -22 0 q-10 18 -20 0 Q8 74 0 64Z" fill="#6b3a1e"/>
+          <g fill="#d4a032"><circle cx="20" cy="130" r="3"/><circle cx="60" cy="132" r="3"/><circle cx="100" cy="130" r="3"/><circle cx="140" cy="132" r="3"/><circle cx="180" cy="130" r="3"/></g>
+          <!-- bougies rayées -->
+          <g><rect x="34" y="0" width="10" height="38" fill="#fff"/><rect x="34" y="6" width="10" height="5" fill="#f48fb1"/><rect x="34" y="18" width="10" height="5" fill="#f48fb1"/><rect x="34" y="30" width="10" height="5" fill="#f48fb1"/>
+            <path class="flamme" d="M39 -16 Q46 -6 39 0 Q32 -6 39 -16Z" fill="#ffb300"/></g>
+          <g><rect x="150" y="0" width="10" height="38" fill="#fff"/><rect x="150" y="6" width="10" height="5" fill="#f48fb1"/><rect x="150" y="18" width="10" height="5" fill="#f48fb1"/><rect x="150" y="30" width="10" height="5" fill="#f48fb1"/>
+            <path class="flamme" d="M155 -16 Q162 -6 155 0 Q148 -6 155 -16Z" fill="#ffb300" style="animation-delay:.15s"/></g>
+          <!-- le durian -->
+          <g transform="translate(96 4)">
+            <g fill="#7a9a2e"><path d="M-30 0 l-10 -6 l8 -4z"/><path d="M-22 -18 l-6 -12 l10 4z"/><path d="M0 -26 l0 -14 l6 12z"/><path d="M22 -18 l8 -12 l0 12z"/><path d="M30 0 l12 -4 l-6 10z"/><path d="M24 20 l12 6 l-12 2z"/><path d="M-24 20 l-12 6 l12 2z"/></g>
+            <circle cx="0" cy="2" r="30" fill="#9cbf3c" stroke="#5f7a20" stroke-width="2"/>
+            <circle cx="-9" cy="-2" r="3.5" fill="#2b2033"/><circle cx="9" cy="-2" r="3.5" fill="#2b2033"/><circle cx="-8" cy="-3.5" r="1.2" fill="#fff"/><circle cx="10" cy="-3.5" r="1.2" fill="#fff"/>
+            <path d="M-8 10 q8 8 16 0" stroke="#2b2033" stroke-width="2.5" fill="#c94a5a"/>
+            <ellipse cx="-18" cy="6" rx="5" ry="3" fill="#f38ea0" opacity=".7"/><ellipse cx="18" cy="6" rx="5" ry="3" fill="#f38ea0" opacity=".7"/>
+            <g class="salue"><path d="M28 -2 l18 -16" stroke="#9cbf3c" stroke-width="6" stroke-linecap="round"/><circle cx="47" cy="-19" r="3" fill="#e53950"/></g>
+          </g>
+        </g>
+        <text x="140" y="290" font-family="Bangers" font-size="16" fill="#c43d63" text-anchor="middle">LISTE D'ATTENTE : 2027</text>
+        <rect width="400" height="300" filter="url(#papier)"/>
+      </svg>
+      <div class="bulle bas" style="left:3%;top:4%">Moi aussi je veux une manucure !</div>
+      <div class="bulle b2 bas-d" style="right:3%;top:4%">Désolée, mon petit piquant… c'est complet jusqu'en 2027 !</div>
+    </div>
+  </section>
+
+  <!-- 8. Le grand final -->
+  <section class="planche">
+    <p class="recit"><b>Minuit.</b> Tout le Mousseau allume des lanternes pour sa Reine.</p>
+    <div class="case">
+      <svg viewBox="0 0 400 300" role="img" aria-label="Feux d'artifice et lanternes au-dessus d'Évry pour l'anniversaire de Tata Nga">
+        <rect width="400" height="300" fill="url(#nuit)"/>
+        <g stroke-width="3" stroke-linecap="round">
+          <g class="feu" stroke="#ff6fa0"><path d="M80 70 l0 -30 M80 70 l21 -21 M80 70 l30 0 M80 70 l21 21 M80 70 l0 30 M80 70 l-21 21 M80 70 l-30 0 M80 70 l-21 -21"/></g>
+          <g class="feu" stroke="#ffd54f" style="animation-delay:.8s"><path d="M320 60 l0 -34 M320 60 l24 -24 M320 60 l34 0 M320 60 l24 24 M320 60 l0 34 M320 60 l-24 24 M320 60 l-34 0 M320 60 l-24 -24"/></g>
+          <g class="feu" stroke="#7fe0c4" style="animation-delay:1.5s"><path d="M210 40 l0 -24 M210 40 l17 -17 M210 40 l24 0 M210 40 l17 17 M210 40 l0 24 M210 40 l-17 17 M210 40 l-24 0 M210 40 l-17 -17"/></g>
+        </g>
+        <g opacity=".85"><use href="#ville"/></g>
+        <g>
+          <g class="lanterne"><g transform="translate(40 260)"><ellipse rx="10" ry="14" fill="#e63946"/><rect x="-6" y="-16" width="12" height="3" fill="#d4a032"/><rect x="-6" y="13" width="12" height="3" fill="#d4a032"/><ellipse rx="5" ry="8" fill="#ffd166" opacity=".6"/></g></g>
+          <g class="lanterne" style="animation-delay:-2s"><g transform="translate(110 280)"><ellipse rx="10" ry="14" fill="#f4a261"/><rect x="-6" y="-16" width="12" height="3" fill="#d4a032"/><rect x="-6" y="13" width="12" height="3" fill="#d4a032"/><ellipse rx="5" ry="8" fill="#ffd166" opacity=".6"/></g></g>
+          <g class="lanterne" style="animation-delay:-4s"><g transform="translate(300 270)"><ellipse rx="10" ry="14" fill="#e63946"/><rect x="-6" y="-16" width="12" height="3" fill="#d4a032"/><rect x="-6" y="13" width="12" height="3" fill="#d4a032"/><ellipse rx="5" ry="8" fill="#ffd166" opacity=".6"/></g></g>
+          <g class="lanterne" style="animation-delay:-6s"><g transform="translate(370 285)"><ellipse rx="10" ry="14" fill="#f4a261"/><rect x="-6" y="-16" width="12" height="3" fill="#d4a032"/><rect x="-6" y="13" width="12" height="3" fill="#d4a032"/><ellipse rx="5" ry="8" fill="#ffd166" opacity=".6"/></g></g>
+        </g>
+        <use href="#nga" transform="translate(130 92) scale(.66)"/>
+        <g fill="#ff6fa0"><path class="coeur" d="M120 200 c-6 -8 -16 0 -8 8 l8 8 l8 -8 c8 -8 -2 -16 -8 -8z"/><path class="coeur" style="animation-delay:1.2s" d="M280 210 c-6 -8 -16 0 -8 8 l8 8 l8 -8 c8 -8 -2 -16 -8 -8z"/><path class="coeur" style="animation-delay:2s" d="M250 170 c-5 -7 -13 0 -7 7 l7 7 l7 -7 c6 -7 -2 -14 -7 -7z"/></g>
+        <text x="200" y="292" font-family="Dancing Script" font-weight="700" font-size="30" fill="#ffd54f" text-anchor="middle" stroke="#2b2033" stroke-width=".8">Chúc mừng sinh nhật !</text>
+        <rect width="400" height="300" filter="url(#papier)"/>
+      </svg>
+      <div class="bulle bas" style="left:3%;top:30%">Merci tout le monde ! Je vous aime… et vos ongles aussi !</div>
+    </div>
+  </section>
+
+  <section class="fin">
+    <div class="viet">Joyeux anniversaire<br>Tata Nga !</div>
+    <p>À la Reine des Ongles, la plus stylée de l'Essonne : que ta nouvelle année soit brillante comme un vernis tout frais, solide comme un gel UV, et pleine de rires, d'amour et de bons petits restos. 💖</p>
+    <p><b>Gros bisous de toute la famille Tanseri-Lescure</b><br>Nieu, Nounou, Dayvon, Noa et Alexis</p>
+    <button class="btn" id="feux">🎆 Lancer les confettis</button>
+    <p style="margin-top:14px"><a href="album.html">➜ Voir aussi l'album photo en musique</a></p>
+    <p style="font-size:12px;opacity:.6">Fin du tome 1. Tome 2 : « La Reine contre l'ongle incarné » (bientôt… ou jamais).</p>
+  </section>
+</main>
+
+<button class="musique" id="musique" aria-pressed="false"><span class="ic">▶</span><span id="mtxt">Musique vietnamienne</span></button>
+
+<script src="musique.js"></script>
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vu');io.unobserve(e.target);}})},{threshold:.2});
+document.querySelectorAll('.planche').forEach(function(c){io.observe(c)});
+var mb=document.getElementById('musique');
+mb.onclick=function(){var on=TataMusique.toggle();mb.setAttribute('aria-pressed',on);
+mb.querySelector('.ic').textContent=on?'❚❚':'▶';document.getElementById('mtxt').textContent=on?'Pause musique':'Musique vietnamienne';};
+document.getElementById('feux').onclick=function(){var cols=['#e2557a','#ffd54f','#81c784','#64b5f6','#ba68c8','#ff8a65'];
+for(var i=0;i<90;i++){var c=document.createElement('span');c.className='confetti';c.style.left=Math.random()*100+'vw';
+c.style.background=cols[i%cols.length];c.style.setProperty('--dx',(Math.random()*200-100)+'px');c.style.animationDelay=Math.random()*.6+'s';
+document.body.appendChild(c);setTimeout(c.remove.bind(c),3500);}};
+</script>
+</body>
+</html>

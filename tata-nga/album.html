@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tata Nga, Reine des Ongles</title>
+<meta name="description" content="L'album photo (presque) vrai de Tata Nga, la Reine des Ongles du Mousseau. Joyeux anniversaire !">
+<meta property="og:title" content="👑💅 Tata Nga, la Reine des Ongles du Mousseau">
+<meta property="og:description" content="Un album photo drôle avec musique vietnamienne. Joyeux anniversaire Tata Nga !">
+<meta property="og:image" content="https://henrilescure74330.github.io/BD-TANSERI-LESCURE/tata-nga/nga-gateau.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--rose:#e2557a;--rose-pale:#fde6ec;--or:#c9962b;--encre:#3a2430;--papier:#fffaf3;--vert:#2f6b4f;}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:#f7e8e4 radial-gradient(circle at 20% 0%,#ffe9ef 0,transparent 50%),radial-gradient(circle at 100% 60%,#fff3d6 0,transparent 45%);
+  color:var(--encre);font:17px/1.6 Nunito,system-ui,sans-serif;overflow-x:hidden}
+.petales{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.petale{position:absolute;top:-30px;width:14px;height:12px;background:#f7a8bd;border-radius:80% 0 80% 0;opacity:.8;animation:tombe linear infinite}
+@keyframes tombe{to{transform:translate(var(--dx),110vh) rotate(720deg)}}
+main{position:relative;z-index:2;max-width:640px;margin:0 auto;padding:0 16px 120px}
+header{text-align:center;padding:48px 0 20px}
+.couronne{font-size:56px;display:inline-block;animation:flotte 3s ease-in-out infinite}
+@keyframes flotte{50%{transform:translateY(-8px) rotate(-4deg)}}
+h1{font-family:"Dancing Script",cursive;font-size:clamp(40px,11vw,62px);line-height:1.05;margin:6px 0;color:var(--rose);text-shadow:2px 2px 0 #fff}
+.sous{font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:13px;color:var(--or)}
+.lieu{font-size:15px;opacity:.75;margin-top:4px}
+.chap{background:var(--papier);border-radius:18px;padding:22px 20px 26px;margin:34px 0;box-shadow:0 10px 30px rgba(120,40,60,.12);
+  position:relative;opacity:0;transform:translateY(30px);transition:all .8s ease}
+.chap.vu{opacity:1;transform:none}
+.chap::before{content:"";position:absolute;inset:8px;border:1.5px dashed #f0c2cf;border-radius:12px;pointer-events:none}
+.num{font-family:"Dancing Script",cursive;color:var(--or);font-size:22px}
+h2{font-family:"Dancing Script",cursive;font-size:34px;line-height:1.1;margin:0 0 10px;color:var(--rose)}
+.polaroid{background:#fff;padding:12px 12px 46px;margin:18px auto;max-width:400px;box-shadow:0 8px 22px rgba(0,0,0,.18);position:relative;transform:rotate(var(--r,-2deg))}
+.polaroid img{width:100%;display:block}
+.polaroid figcaption{position:absolute;bottom:10px;left:0;right:0;text-align:center;font-family:"Dancing Script",cursive;font-size:22px}
+.scotch{position:absolute;top:-12px;left:50%;width:110px;height:28px;margin-left:-55px;background:rgba(255,220,150,.75);transform:rotate(3deg)}
+.bulle{background:#fff;border:2.5px solid var(--encre);border-radius:22px;padding:12px 16px;font-weight:800;position:relative;margin:18px 10px 6px;font-size:16px}
+.bulle::after{content:"";position:absolute;left:34px;top:-16px;border:8px solid transparent;border-bottom:14px solid var(--encre);border-top:0}
+.fiche{background:var(--rose-pale);border-radius:12px;padding:12px 16px;margin-top:14px;font-size:15.5px}
+.fiche b{color:var(--rose)}
+.ongles{font-size:30px;text-align:center;letter-spacing:6px;margin:8px 0}
+.brille{display:inline-block;animation:brille 1.6s ease-in-out infinite}
+@keyframes brille{50%{transform:scale(1.25);filter:drop-shadow(0 0 6px gold)}}
+.final{text-align:center;background:linear-gradient(160deg,#fff 0,#ffeef3 100%)}
+.final .viet{font-family:"Dancing Script",cursive;font-size:40px;color:#c4302b;line-height:1.1}
+.bougies{display:flex;justify-content:center;gap:14px;margin:38px 0 6px}
+.bougie{width:14px;height:56px;border-radius:4px;background:repeating-linear-gradient(-30deg,#fff 0 6px,#f48fb1 6px 12px);position:relative}
+.bougie::before{content:"";position:absolute;top:-22px;left:50%;width:12px;height:20px;margin-left:-6px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;
+  background:radial-gradient(circle at 50% 70%,#fff6b0,#ffb300 60%,#ff6f00);animation:flamme .3s ease-in-out infinite alternate;transition:opacity .4s}
+@keyframes flamme{to{transform:scaleY(1.15) skewX(4deg)}}
+.eteint .bougie::before{opacity:0}
+.btn{font:800 17px Nunito,sans-serif;border:0;border-radius:999px;padding:14px 24px;cursor:pointer;color:#fff;background:var(--rose);box-shadow:0 6px 0 #a83555;margin-top:12px}
+.btn:active{transform:translateY(4px);box-shadow:0 2px 0 #a83555}
+.signe{margin-top:18px;font-weight:700}
+.musique{position:fixed;z-index:10;bottom:16px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;
+  background:var(--encre);color:#fff;border:0;border-radius:999px;padding:12px 22px 12px 14px;font:800 16px Nunito,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.3);cursor:pointer;white-space:nowrap}
+.musique .ic{width:34px;height:34px;border-radius:50%;background:var(--rose);display:grid;place-items:center;font-size:16px}
+.musique.on .ic{animation:pulse 1.5s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(226,85,122,.3)}}
+.confetti{position:fixed;top:-20px;width:9px;height:14px;z-index:20;pointer-events:none;animation:conf 2.6s ease-in forwards}
+@keyframes conf{to{transform:translate(var(--dx),105vh) rotate(900deg)}}
+.lien-bd{display:block;text-align:center;margin:10px 0 0;color:var(--vert);font-weight:800}
+</style>
+</head>
+<body>
+<div class="petales" id="petales"></div>
+<main>
+  <header>
+    <div class="couronne">👑</div>
+    <div class="sous">Album photo (presque) véridique</div>
+    <h1>Tata Nga,<br>la Reine des Ongles</h1>
+    <div class="lieu">📍 Quartier du Mousseau · Évry · Essonne</div>
+    <div class="ongles"><span class="brille">💅</span> ✨ <span class="brille" style="animation-delay:.5s">💅</span></div>
+  </header>
+
+  <section class="chap">
+    <div class="num">Chapitre 1</div>
+    <h2>Il était une fois, à Évry…</h2>
+    <p>Il était une fois, dans l'Essonne, au cœur du quartier du Mousseau, une reine. Pas une reine avec une couronne (ça décoiffe). Une reine avec <b>dix ongles</b>. Dix ongles nickel, propres, brillants, design, stylés.</p>
+    <p>Quand Tata Nga lève la main dans la rue, les lampadaires du quartier se mettent en veille : ils ne servent plus à rien. Et les avions qui passent au-dessus d'Évry font un petit coucou avec les ailes. Par respect.</p>
+    <div class="fiche">
+      <b>👑 Fiche royale</b><br>
+      <b>Nom :</b> Tata Nga<br>
+      <b>Titre :</b> Reine Esthéticienne, Grande Manucure du Mousseau<br>
+      <b>Super-pouvoir :</b> transforme n'importe quelle main en œuvre d'art<br>
+      <b>Point faible :</b> repère un ongle mal limé à 50 mètres. Dans le noir.
+    </div>
+  </section>
+
+  <section class="chap">
+    <div class="num">Chapitre 2</div>
+    <h2>V comme… Vernis</h2>
+    <figure class="polaroid" style="--r:-2.5deg"><span class="scotch"></span>
+      <img src="nga-victoire.jpg" alt="Tata Nga souriante fait le signe V, ongles rouges impeccables" loading="lazy">
+      <figcaption>Ongles rouges, mode victoire</figcaption>
+    </figure>
+    <p>Ici, Tata Nga fait le signe V. Les gens croient que c'est pour « Victoire ». Erreur. <b>V comme Vernis.</b> V comme Vermillon. V comme « Vous avez vu mes ongles ? ».</p>
+    <p>Même l'œuf au plat est impressionné : il s'est mis au garde-à-vous, le jaune parfaitement centré, sans une bavure. Le serveur a raconté plus tard : « Elle a regardé l'assiette, puis elle a regardé mes mains… et elle m'a laissé sa carte de visite. »</p>
+    <div class="bulle">« Le foie gras est très bon. Mais tes cuticules, mon chéri… on en reparle mardi. »</div>
+  </section>
+
+  <section class="chap">
+    <div class="num">Chapitre 3</div>
+    <h2>Mission secrète au restaurant</h2>
+    <figure class="polaroid" style="--r:2deg"><span class="scotch"></span>
+      <img src="nga-restaurant.jpg" alt="Tata Nga au restaurant, pull gris, manucure nude" loading="lazy">
+      <figcaption>Agent N.G.A. en mission</figcaption>
+    </figure>
+    <p>Officiellement, Tata Nga est venue manger une belle pièce de bœuf. Officiellement.</p>
+    <p>En réalité, c'est une <b>mission d'inspection</b>. Regardez sa main : manucure nude, discrète, ultra chic. C'est le mode « agent secret ». Derrière elle, deux clients chuchotent : « C'est elle… la Reine du Mousseau ! »</p>
+    <p>Le chef cuisinier a fait trois fois le tour de la salle avec les mains dans les poches. Et le pain dans la corbeille a gonflé de fierté : c'est la première fois qu'il est touché par des ongles aussi bien faits.</p>
+    <div class="bulle">« Tranquille. Je mange, j'observe, je juge… avec amour. »</div>
+  </section>
+
+  <section class="chap">
+    <div class="num">Chapitre 4</div>
+    <h2>Le gâteau qui voulait une manucure</h2>
+    <figure class="polaroid" style="--r:-1.5deg"><span class="scotch"></span>
+      <img src="nga-gateau.jpg" alt="Carte d'anniversaire de Tata Nga avec un gâteau au durian et des roses" loading="lazy">
+      <figcaption>Joyeux anniversaire, bà Nga !</figcaption>
+    </figure>
+    <p>Pour son anniversaire, le gâteau est arrivé avec du <b>durian</b> dessus. Le durian, ce fruit tellement piquant que même les limes à ongles lui disent « vous ».</p>
+    <p>Les bougies, elles, ont refusé de s'allumer tant qu'elles n'avaient pas eu leur pose de vernis rose et blanc. C'est pour ça qu'elles sont rayées. Et les roses du bouquet ont demandé un rendez-vous pour une manucure. Réponse : complet, liste d'attente jusqu'en 2027.</p>
+    <div class="bulle">« Pas de photo de mes mains sans top coat, merci ! »</div>
+  </section>
+
+  <section class="chap">
+    <div class="num">Chapitre 5</div>
+    <h2>La légende du Mousseau</h2>
+    <p>On raconte qu'à Évry, quand un ongle se casse quelque part, un petit vent parfumé souffle sur le Mousseau. Et Tata Nga apparaît, avec sa trousse magique : lime, pinceau, paillettes.</p>
+    <p>Trois minutes plus tard, l'ongle est réparé, la personne sourit jusqu'aux oreilles, et elle repart avec une manucure tellement brillante qu'on la voit depuis la Lune. 🌙✨</p>
+    <p>Moralité : on peut tout rater dans la vie… sauf ses ongles quand on connaît Tata Nga.</p>
+  </section>
+
+  <section class="chap final">
+    <div class="viet">Chúc mừng sinh nhật<br>Tata Nga !</div>
+    <div class="bougies" id="bougies"><span class="bougie"></span><span class="bougie"></span><span class="bougie"></span><span class="bougie"></span><span class="bougie"></span></div>
+    <button class="btn" id="souffle">🎂 Souffler les bougies</button>
+    <p style="margin-top:20px">Joyeux anniversaire à la plus stylée des tatas ! Que ta nouvelle année soit <b>brillante</b> comme un vernis tout frais, <b>solide</b> comme un gel UV, et pleine de rires, d'amour et de bons petits restos.</p>
+    <p class="signe">Gros bisous de toute la famille Tanseri-Lescure 💖<br>Nieu, Nounou, Dayvon, Noa et Alexis</p>
+    <a class="lien-bd" href="bd.html">➜ Voir aussi la grande BD animée</a>
+  </section>
+</main>
+
+<button class="musique" id="musique" aria-pressed="false"><span class="ic">▶</span><span id="mtxt">Musique vietnamienne</span></button>
+
+<script src="musique.js"></script>
+<script>
+// pétales qui tombent
+(function(){var p=document.getElementById('petales');var cols=['#f7a8bd','#ffd1dc','#ffe08a','#f48fb1'];
+for(var i=0;i<16;i++){var s=document.createElement('span');s.className='petale';s.style.left=Math.random()*100+'%';
+s.style.background=cols[i%4];s.style.setProperty('--dx',(Math.random()*160-80)+'px');
+s.style.animationDuration=(9+Math.random()*9)+'s';s.style.animationDelay=(-Math.random()*15)+'s';p.appendChild(s);}})();
+// chapitres qui apparaissent
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vu');io.unobserve(e.target);}})},{threshold:.12});
+document.querySelectorAll('.chap').forEach(function(c){io.observe(c)});
+// musique
+var mb=document.getElementById('musique');
+mb.onclick=function(){var on=TataMusique.toggle();mb.classList.toggle('on',on);mb.setAttribute('aria-pressed',on);
+mb.querySelector('.ic').textContent=on?'❚❚':'▶';document.getElementById('mtxt').textContent=on?'Pause musique':'Musique vietnamienne';};
+// bougies + confettis
+function confettis(){var cols=['#e2557a','#ffd54f','#81c784','#64b5f6','#ba68c8','#ff8a65'];
+for(var i=0;i<90;i++){var c=document.createElement('span');c.className='confetti';c.style.left=Math.random()*100+'vw';
+c.style.background=cols[i%cols.length];c.style.setProperty('--dx',(Math.random()*200-100)+'px');c.style.animationDelay=Math.random()*.6+'s';
+document.body.appendChild(c);setTimeout(c.remove.bind(c),3500);}}
+var b=document.getElementById('souffle'),bg=document.getElementById('bougies');
+b.onclick=function(){if(bg.classList.toggle('eteint')){confettis();b.textContent='🕯️ Rallumer les bougies';}else b.textContent='🎂 Souffler les bougies';};
+</script>
+</body>
+</html>
